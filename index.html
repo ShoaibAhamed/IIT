@@ -29,7 +29,7 @@ setInterval(function() {
     .fadeIn(2000)
     .end()
     .appendTo('#slideshow');
-},  6000);
+},  3000);
 
 
   </script>
@@ -80,6 +80,27 @@ setInterval(function() {
 
 
 <!-- chart JS ends here --> 
+
+
+<!-- for scrolling js starts here -->
+
+<script>$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+}); </script>
+
+
+<!-- for scrolling js ends here -->
 
     <style>
 
@@ -799,11 +820,11 @@ float:left;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Testimony</a></li>
+        <li><a href="#slideshow">Home</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#hedo">Testimony</a></li>
         <li><a href="slide_toggle.html">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#monday">Contact</a></li>
       </ul>
       
     </div>
@@ -863,37 +884,37 @@ float:left;
 
   <!-- SCROLLING JS STARTS -->   
 
-    <script type="text/javascript">
+//     <script type="text/javascript">
 
-var $animation_elements = $('.animation-element');
-var $window = $(window);
+// var $animation_elements = $('.animation-element');
+// var $window = $(window);
 
-function check_if_in_view() {
-  var window_height = $window.height();
-  var window_top_position = $window.scrollTop();
-  var window_bottom_position = (window_top_position + window_height);
+// function check_if_in_view() {
+//   var window_height = $window.height();
+//   var window_top_position = $window.scrollTop();
+//   var window_bottom_position = (window_top_position + window_height);
 
-  $.each($animation_elements, function() {
-    var $element = $(this);
-    var element_height = $element.outerHeight();
-    var element_top_position = $element.offset().top;
-    var element_bottom_position = (element_top_position + element_height);
+//   $.each($animation_elements, function() {
+//     var $element = $(this);
+//     var element_height = $element.outerHeight();
+//     var element_top_position = $element.offset().top;
+//     var element_bottom_position = (element_top_position + element_height);
 
-    //check to see if this current container is within viewport
-    if ((element_bottom_position >= window_top_position) &&
-      (element_top_position <= window_bottom_position)) {
-      $element.addClass('in-view');
-    } else {
-      $element.removeClass('in-view');
-    }
-  });
-}
+//     //check to see if this current container is within viewport
+//     if ((element_bottom_position >= window_top_position) &&
+//       (element_top_position <= window_bottom_position)) {
+//       $element.addClass('in-view');
+//     } else {
+//       $element.removeClass('in-view');
+//     }
+//   });
+// }
 
-$window.on('scroll resize', check_if_in_view);
-$window.trigger('scroll');
+// $window.on('scroll resize', check_if_in_view);
+// $window.trigger('scroll');
 
 
-</script>
+// </script>
 
 
 
@@ -1124,10 +1145,14 @@ After only a few lessons of this tutorial you will be able to make your own styl
 
 
 <div class="monday">
+
+  <div id ="monday">
   
     <img src="img/shoaib04.jpg"  width="300" height="200">
   
   <div class="desc">shoaib04</div>
+
+  </div> <!-- for id monday -->
 </div>
 
 
